@@ -32,7 +32,7 @@ for k in fData.brList
 end
 sphatb,sqhatb,nC,C,vio,cbC = solveProcess_Budget_CorrB(fData,uData,vmax,vmin,θDmax,θDmin,groupDict[fi][2],1,1e-4,5,0);
 
-for fi in 7:length(fileAddSet)
+for fi in 1:length(fileAddSet)
   # generate fData and uData
   fileAdd = fileAddSet[fi];
   fData = makeFData(fileAdd);

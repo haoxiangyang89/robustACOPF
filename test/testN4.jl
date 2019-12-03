@@ -24,7 +24,6 @@ groupDict = groupData["groupDict"];
 # precompile the function
 fi = 1;
 fData = makeFData(fileAddSet[fi]);
-#fData = makeFData(join(["/home/haoxiang/ccsi-robustopt/ccsi-robustopt/src/0.60Version/",fileAddSet[fi]]));
 fData,uData = makeUAData(fData,0,0);
 vmax = Dict();
 vmin = Dict();
@@ -47,7 +46,6 @@ for fi in 1:length(fileAddSet)
   # generate fData and uData
   fileAdd = fileAddSet[fi];
   fData = makeFData(fileAdd);
-  #fData = makeFData(join(["/home/haoxiang/ccsi-robustopt/ccsi-robustopt/src/0.60Version/",fileAddSet[fi]]));
   totalD = sum(abs(fData.Pd[j]) + abs(fData.Qd[j]) for j in fData.IDList);
   dDict[fi] = Dict();
 

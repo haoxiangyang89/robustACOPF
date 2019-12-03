@@ -39,7 +39,6 @@ sphatnc,sqhatnc,ccnC,vioNC = solveENC_Proc(fData,uData,Ω,ypo,yqo,vmax,vmin,θDm
 for fi in 1:length(fileAddSet)
   # generate fData and uData
   fileAdd = fileAddSet[fi];
-  #fData = makeFData(join(["/home/haoxiang/ccsi-robustopt/ccsi-robustopt/src/0.60Version/",fileAddSet[fi]]));
   fData = makeFData(fileAdd);
   totalD = sum(abs(fData.Pd[j]) + abs(fData.Qd[j]) for j in fData.IDList);
   dDict[fi] = Dict();
@@ -103,7 +102,6 @@ for fi in 1:length(fileAddSet)
 
       # solve for the convex robust solution with bound tightened
       tic();
-      #sphatb,sqhatb,cbC,vioC,nC = solveEC_Proc(fData,uData,Ω,ypo,yqo,vmax,vmin,θDmax,θDmin);
       sphatb,sqhatb,nC,C,vio,cbC = solveProcess_Budget_CorrB(fData,uData,vmax,vmin,θDmax,θDmin,groupDict[fi][2],Γ,1e-4,1,0);
       tb = toc();
       cbC = costCal(fData,sphatb,sqhatb);

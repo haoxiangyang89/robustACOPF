@@ -48,7 +48,6 @@ for fi in 1:length(fileAddSet)
   γ = 0.98;
   # generate fData and uData
   fileAdd = fileAddSet[fi];
-  #fData = makeFData(join(["/home/haoxiang/ccsi-robustopt/ccsi-robustopt/src/0.60Version/",fileAddSet[fi]]));
   fData = makeFData(fileAdd);
   totalD = sum(abs(fData.Pd[j]) + abs(fData.Qd[j]) for j in fData.IDList);
   dDict[fi] = Dict();
@@ -82,7 +81,6 @@ for fi in 1:length(fileAddSet)
   ypt = Dict();
   yqt = Dict();
   for nn in 1:20
-    #Ωt[nn],ypt[nn],yqt[nn] = sampleY(fData,N);
     Ωt[nn],ypt[nn],yqt[nn] = sampleYGcorr(fData,N,groupDict[fi][2]);
   end
 
