@@ -1,5 +1,5 @@
 # robustACOPF
-Codes and data supplemental files for the paper "Robust Optimization for Electricity Generation"
+Codes and data supplemental files for the paper "Robust Optimization for Electricity Generation" by H. Yang, D. P. Morton, C. Bandi, K. Dvijotham, submitted to INFORMS Journal on Computing.
 
 The materials are contained in three folders:
 - src: source codes for algorithms, data input/output and all calculations
